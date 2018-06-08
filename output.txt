@@ -1,0 +1,45 @@
+Enter the matrix: 
+Matrix [0][0] = Matrix [0][1] = Matrix [0][2] = Matrix [1][0] = Matrix [1][1] = Matrix [1][2] = Matrix [2][0] = Matrix [2][1] = Matrix [2][2] = m1: 
+1 2 3 
+4 5 6 
+7 8 9 
+
+
+Enter the matrix: 
+Matrix [0][0] = Matrix [0][1] = Matrix [0][2] = Matrix [1][0] = Matrix [1][1] = Matrix [1][2] = Matrix [2][0] = Matrix [2][1] = Matrix [2][2] = m2: 
+1 1 1 
+1 1 1 
+1 1 1 
+
+
+m3: 
+2 3 4 
+5 6 7 
+8 9 10 
+
+
+Enter the number of rows: Enter the number of columns: Enter the matrix: 
+Matrix [0][0] = Matrix [0][1] = Matrix [0][2] = Matrix [1][0] = Matrix [1][1] = Matrix [1][2] = Matrix [2][0] = Matrix [2][1] = Matrix [2][2] = m4: 
+2 3 4 
+5 6 7 
+8 9 10 
+
+
+m5: 
+51 60 69 
+96 114 132 
+141 168 195 
+
+
+i1: 
+1 0 0 
+0 1 0 
+0 0 1 
+
+
+m6: 
+51 60 69 
+96 114 132 
+141 168 195 
+
+
