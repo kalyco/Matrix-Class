@@ -42,11 +42,11 @@ class Matrix
   void copy(const Matrix & other);
   void cleanup();
 	void indexCheck(int i, int idx) const;
-	void setAxes();
 };
 
 std::istream & operator>>(std::istream & s,       Matrix & a);
 std::ostream & operator<<(std::ostream & s, const Matrix & a);
 Matrix operator+(const Matrix & a2, const Matrix & a3);
+Matrix operator*(const Matrix & a2, const Matrix & a3);
 
 #endif

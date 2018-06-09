@@ -26,9 +26,9 @@ int main()
   cout << "m4: " << endl;
   cout << m4 << endl;
 
-  // Matrix m5(m3 * m4);
-  // cout << "m5: " << endl;
-  // cout << m5 << endl;
+  Matrix m5(m3 * m4);
+  cout << "m5: " << endl;
+  cout << m5 << endl;
   
   // Comment out the following lines 
   // if you have not done the bonus question

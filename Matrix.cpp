@@ -31,6 +31,10 @@ Matrix::~Matrix()
 void Matrix::copy(const Matrix & other)
 {
   allocate(other.rLen, other.cLen);
+
+  for (int i = 0; i < length(); i++) {
+    (*this)[i] = other[i];
+  }
 }
 
 void Matrix::allocate(int r, int c)
@@ -95,7 +99,6 @@ Matrix operator+(const Matrix & a2, const Matrix & a3)
   int curRow = 0;
   int curCol = 0;
   for (int i = 0; i < a2.length(); i++) {
-    int ar[a2.length()];
     int a2V = a2.getVal(curRow, curCol);
     int a3V = a3.getVal(curRow, curCol);
     a1.setVal(curRow, curCol, a2V + a3V);
@@ -108,6 +111,55 @@ Matrix operator+(const Matrix & a2, const Matrix & a3)
   }
   return a1;
 }
+
+Matrix operator*(const Matrix & a2, const Matrix & a3)
+{
+  if (a2.length() != a3.length()) {
+    std::cout << "Inconsistent Matrix sizes." << std::endl;
+    exit(1);
+  }
+
+  Matrix a1(a2.rLen, a2.cLen);
+  int curRow = 0;
+  int curCol = 0;
+  // for each element of the matrix product  
+  for (int i = 0; i < a2.length(); i++) {
+    //TODO: clean this WAY up
+    int total = 0;
+    int rowV2 = 0;
+    int colV2 = 0;
+    int rowV3 = 0;
+    int colV3 = 0;
+    for (int x = 0; x < a2.rLen; x++) {
+      // multiply the value ar2 rows by a3 cols.
+      // increment row val, increment col val
+      // repeat until end of index
+      int a2V = a2.getVal(rowV2, colV2);
+      int a3V = a3.getVal(rowV3, colV3);
+      total += (a2V * a3V);
+      colV3++;
+      rowV2++;
+    }
+    a1.setVal(curRow, curCol, total);
+    // if first row is all set, incr next row
+    // otherwise incr col
+    if (colV3 == (a3.cLen - 1)) {
+      colV3 = 0;
+      rowV2++;
+    } else {
+      rowV2--;
+      colV3++;    
+    }
+    if (curCol == a2.cLen - 1){
+    curCol = 0;
+    curRow++;
+		} else {
+			curCol +=1;
+		}
+  }
+  return a1;
+}
+
 ////////////////////////////////
 //     Class functions        //
 ////////////////////////////////
